@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials — Dosi &amp; Dosi Associates</title>
+  <meta name="description" content="What clients say about working with Dosi & Dosi Associates — real results, from real shop floors.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23B8894B%22 font-family=%22serif%22 font-style=%22italic%22>D</text></svg>">
+  <style>
+    /* Video testimonial cards */
+    .video-testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .video-testimonial-card {
+      background: var(--paper-pure);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(11,26,43,0.04);
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+      border-top: 2px solid var(--gold);
+    }
+    .video-testimonial-card:hover {
+      box-shadow: 0 12px 30px rgba(11,26,43,0.08);
+      transform: translateY(-2px);
+    }
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--ink-deep);
+    }
+    .video-wrap video,
+    .video-wrap iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      border: 0;
+    }
+    .video-testimonial-card .meta {
+      padding: 1.5rem;
+    }
+    .video-testimonial-card .name {
+      font-family: var(--display);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+    .video-testimonial-card .role {
+      font-size: 0.88rem;
+      color: var(--slate);
+      margin-bottom: 0.75rem;
+    }
+    .video-testimonial-card .pull {
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 0.98rem;
+      color: var(--charcoal);
+      line-height: 1.5;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--mist);
+    }
+    /* Placeholder slot for when videos aren't loaded yet */
+    .video-placeholder-slot {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--ink-deep), var(--ink));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      gap: 0.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .video-placeholder-slot::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(184,137,75,0.15), transparent 60%);
+    }
+    .video-placeholder-slot .play-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+    .video-placeholder-slot .play-icon::after {
+      content: '';
+      width: 0; height: 0;
+      border-left: 14px solid var(--ink-deep);
+      border-top: 9px solid transparent;
+      border-bottom: 9px solid transparent;
+      margin-left: 4px;
+    }
+    .video-placeholder-slot .label {
+      position: relative;
+      z-index: 2;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        Dosi <span class="brand-mark">&amp;</span> Dosi
+        <span class="brand-sub">Associates</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="testimonials.html" class="active">Testimonials</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="contact.html" class="nav-cta">Request a Discussion</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="page-header-inner">
+      <span class="eyebrow">Testimonials</span>
+      <h1>Real clients. Real floors. <em>Real results.</em></h1>
+      <p class="page-header-lead">
+        The best proof of what flow improvement does is the people it's already worked for.
+        Here's what a few of them have to say — in their own words.
+      </p>
+    </div>
+  </header>
+
+  <section class="testimonials-body">
+    <div class="container">
+
+      <span class="section-eyebrow">Client Voices</span>
+      <h2 class="section-title">Video Testimonials.</h2>
+      <p class="section-lead">
+        Four clients speak about what changed on their shop floors after working with us.
+      </p>
+
+      <!--
+        ============================================================
+        HOW TO ADD TESTIMONIALS LATER
+        ============================================================
+        Each card below is a placeholder. You have 2 options per card:
+
+        OPTION A — EMBED A HOSTED VIDEO (YouTube / Vimeo):
+        Replace the <div class="video-placeholder-slot">...</div>
+        with:
+          <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+                    title="Testimonial" allowfullscreen loading="lazy"></iframe>
+          </div>
+
+        OPTION B — USE A LOCAL MP4 FILE:
+        Place the mp4 in a /videos/ folder alongside the HTML files, then:
+          <div class="video-wrap">
+            <video controls preload="metadata" poster="videos/thumb-1.jpg">
+              <source src="videos/testimonial-1.mp4" type="video/mp4">
+            </video>
+          </div>
+
+        Then fill in the name / role / pull-quote in the .meta block.
+        ============================================================
+      -->
+
+      <div class="video-testimonial-grid">
+
+        <div class="video-testimonial-card reveal">
+          <div class="video-placeholder-slot">
+            <div class="play-icon"></div>
+            <div class="label">Video 01</div>
+          </div>
+          <div class="meta">
+            <div class="name">Client Name</div>
+            <div class="role">Role · Company</div>
+            <div class="pull">Short pull-quote from the testimonial will go here.</div>
+          </div>
+        </div>
+
+        <div class="video-testimonial-card reveal" style="transition-delay: 0.06s">
+          <div class="video-placeholder-slot">
+            <div class="play-icon"></div>
+            <div class="label">Video 02</div>
+          </div>
+          <div class="meta">
+            <div class="name">Client Name</div>
+            <div class="role">Role · Company</div>
+            <div class="pull">Short pull-quote from the testimonial will go here.</div>
+          </div>
+        </div>
+
+        <div class="video-testimonial-card reveal" style="transition-delay: 0.12s">
+          <div class="video-placeholder-slot">
+            <div class="play-icon"></div>
+            <div class="label">Video 03</div>
+          </div>
+          <div class="meta">
+            <div class="name">Client Name</div>
+            <div class="role">Role · Company</div>
+            <div class="pull">Short pull-quote from the testimonial will go here.</div>
+          </div>
+        </div>
+
+        <div class="video-testimonial-card reveal" style="transition-delay: 0.18s">
+          <div class="video-placeholder-slot">
+            <div class="play-icon"></div>
+            <div class="label">Video 04</div>
+          </div>
+          <div class="meta">
+            <div class="name">Client Name</div>
+            <div class="role">Role · Company</div>
+            <div class="pull">Short pull-quote from the testimonial will go here.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Closer -->
+      <div class="results-callout" style="margin-top: 4rem;">
+        <blockquote>
+          The best proof isn't a promise — it's a <em>floor that finally flows.</em>
+        </blockquote>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Want to be the <em>next</em> story on this page?</h2>
+      <a href="contact.html" class="btn btn-primary">
+        Request a Discussion
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Dosi <em>&amp;</em> Dosi Associates</div>
+        <p>Execution specialists in flow improvement and Theory of Constraints — partnering with leadership and shop-floor teams to deliver measurable outcomes.</p>
+      </div>
+      <div>
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="results.html">Results</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Get in Touch</h5>
+        <ul>
+          <li><a href="tel:+919229891506">+91 92298 91506</a></li>
+          <li><a href="tel:+917000918366">+91 70009 18366</a></li>
+          <li><a href="mailto:dosiandosiassociates@gmail.com">dosiandosiassociates@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Dosi &amp; Dosi Associates. All rights reserved.</span>
+      <span>Execution. Flow. Results.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
