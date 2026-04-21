@@ -946,6 +946,256 @@ footer .copyright {
   color: rgba(255,255,255,0.4);
 }
 
+/* Written quote testimonial cards (mixed with videos) */
+.quote-card {
+  background: var(--paper-pure);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid var(--mist);
+  border-top: 3px solid var(--gold);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.quote-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(11, 37, 69, 0.1);
+}
+.quote-card .quote-mark {
+  font-family: var(--display);
+  font-size: 3.5rem;
+  line-height: 0.5;
+  color: var(--gold);
+  font-style: italic;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.quote-card blockquote {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--charcoal);
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+.quote-card .attr {
+  padding-top: 1rem;
+  border-top: 1px solid var(--mist);
+}
+.quote-card .attr .name {
+  font-family: var(--display);
+  font-size: 1.1rem;
+  color: var(--ink);
+  font-weight: 500;
+  margin-bottom: 0.15rem;
+}
+.quote-card .attr .role {
+  font-size: 0.9rem;
+  color: var(--slate);
+  margin-bottom: 0.6rem;
+}
+.quote-card .attr .company {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  font-weight: 600;
+  padding: 0.28rem 0.6rem;
+  background: rgba(200, 150, 74, 0.1);
+  border-radius: 100px;
+}
+
+/* ===== EXPERT ENDORSEMENTS ===== */
+.endorsements {
+  background: var(--ink);
+  color: var(--paper-pure);
+  position: relative;
+  overflow: hidden;
+}
+.endorsements::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(200,150,74,0.08), transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(200,150,74,0.05), transparent 50%);
+  pointer-events: none;
+}
+.endorsements .container { position: relative; z-index: 2; }
+.endorsements .section-tag { color: var(--gold); }
+.endorsements .section-title { color: var(--paper-pure); }
+.endorsements .section-title em { color: var(--gold); }
+.endorsements .section-lead { color: rgba(255,255,255,0.72); }
+
+.endorsement-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 820px) { .endorsement-grid { grid-template-columns: 1fr; } }
+
+.endorsement {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.endorsement:hover { border-color: var(--gold); transform: translateY(-3px); }
+.endorsement .quote-mark {
+  font-family: var(--display);
+  font-size: 3rem;
+  color: var(--gold);
+  font-style: italic;
+  line-height: 0.5;
+  margin-bottom: 1rem;
+  display: block;
+  font-weight: 500;
+}
+.endorsement blockquote {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--paper-pure);
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+.endorsement .expert {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.endorsement .expert .name {
+  font-family: var(--display);
+  font-size: 1.05rem;
+  color: var(--paper-pure);
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+.endorsement .expert .credential {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.4;
+}
+
+.endorsement-placeholder {
+  background: rgba(255,255,255,0.02);
+  border: 1px dashed rgba(255,255,255,0.15);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.5);
+}
+.endorsement-placeholder .icon {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 2rem;
+  color: var(--gold);
+  opacity: 0.6;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 500;
+}
+
+/* ===== LINKEDIN INSIGHTS ===== */
+.insights {
+  background: var(--paper-pure);
+}
+.insights-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+.insights-head > div { flex: 1; min-width: 280px; }
+.linkedin-profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.25rem;
+  background: #0A66C2;
+  color: var(--paper-pure);
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: background 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+.linkedin-profile-btn:hover {
+  background: #0955a1;
+  transform: translateY(-1px);
+}
+.linkedin-profile-btn svg {
+  width: 18px; height: 18px;
+  fill: currentColor;
+}
+
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width: 820px) { .insight-grid { grid-template-columns: 1fr; } }
+
+.insight {
+  background: var(--paper);
+  padding: 1.75rem;
+  border-radius: 10px;
+  border: 1px solid var(--mist);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.insight:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(11, 37, 69, 0.08);
+  border-color: rgba(200, 150, 74, 0.4);
+}
+.insight .meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0A66C2;
+  font-weight: 600;
+  margin-bottom: 0.9rem;
+}
+.insight .meta svg {
+  width: 14px; height: 14px;
+  fill: currentColor;
+}
+.insight h4 {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+  line-height: 1.35;
+  font-weight: 500;
+}
+.insight p {
+  color: var(--slate);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+.insight .read-more {
+  font-size: 0.88rem;
+  color: var(--gold-deep);
+  font-weight: 600;
+  margin-top: auto;
+}
+
 /* ===== Reveal animation ===== */
 @media (prefers-reduced-motion: no-preference) {
   .reveal {
