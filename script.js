@@ -51,7 +51,7 @@
       const body = encodeURIComponent(
         `Name: ${name}\nCompany: ${company}\nPhone: ${phone}\nPrimary Challenge: ${issue}\n\nMessage:\n${message}`
       );
-      window.location.href = `mailto:dosiandosiassociates@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:dosiandosiassociates@gmail.com?cc=dosianil@yahoo.co.in&subject=${subject}&body=${body}`;
     });
   }
 })();
