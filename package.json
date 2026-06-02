@@ -1,0 +1,20 @@
+{
+  "name": "dosi-dosi-associates",
+  "version": "1.0.0",
+  "description": "TOC with Anil — Theory of Constraints Practice",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build step required'"
+  },
+  "keywords": [
+    "toc",
+    "theory-of-constraints",
+    "manufacturing"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
