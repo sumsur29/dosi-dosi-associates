@@ -418,14 +418,60 @@ section { padding: var(--sect-y) var(--gutter); }
   font-family: var(--serif);
   font-size: clamp(1.1rem, 1.5vw, 1.3rem);
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--ink-soft);
-  margin-bottom: 2.25rem;
-  max-width: 42ch;
+  margin-bottom: 1rem;
+  max-width: 48ch;
 }
 .hero-lede em {
   font-style: italic;
   color: var(--teal);
+}
+.hero-lede strong {
+  font-weight: 600;
+  color: var(--teal);
+  font-style: normal;
+}
+
+/* Audience qualifier — sits below lede */
+.hero-qualifier {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--teal-soft);
+  margin-bottom: 1.75rem;
+  letter-spacing: 0.01em;
+  padding-left: 0.85rem;
+  border-left: 2px solid var(--ochre);
+  line-height: 1.5;
+  max-width: 52ch;
+}
+
+/* Trust line — endorsements above CTAs */
+.hero-trust {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  margin-bottom: 1.5rem;
+  padding: 0.55rem 0.9rem;
+  background: rgba(31, 71, 71, 0.05);
+  border: 0.5px solid rgba(31, 71, 71, 0.12);
+}
+.hero-trust strong {
+  font-weight: 600;
+  color: var(--teal);
+}
+.trust-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--ochre);
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px rgba(201, 136, 44, 0.18);
 }
 
 .hero-actions {
@@ -433,6 +479,48 @@ section { padding: var(--sect-y) var(--gutter); }
   gap: 1.25rem;
   align-items: center;
   flex-wrap: wrap;
+}
+
+/* Microcopy — anti-objection text under CTAs */
+.hero-microcopy {
+  margin-top: 1rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  max-width: 44ch;
+  padding-left: 0.85rem;
+  border-left: 1px solid var(--rule);
+}
+
+/* WhatsApp link */
+.hero-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.1rem;
+  background: rgba(37, 211, 102, 0.08);
+  border: 0.5px solid rgba(37, 211, 102, 0.35);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: #128C7E;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  letter-spacing: 0.005em;
+}
+.hero-whatsapp:hover {
+  background: rgba(37, 211, 102, 0.15);
+  border-color: #25D366;
+  transform: translateX(3px);
+}
+.hero-whatsapp svg {
+  width: 16px;
+  height: 16px;
+  fill: #25D366;
+  flex-shrink: 0;
 }
 
 /* HERO CARD — outcomes on right */
@@ -491,19 +579,10 @@ section { padding: var(--sect-y) var(--gutter); }
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--ochre);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.5px solid rgba(201, 136, 44, 0.25);
 }
-.hero-card-title {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 22px;
-  font-weight: 500;
-  color: var(--cream);
-  margin-bottom: 1.75rem;
-  letter-spacing: -0.005em;
-  line-height: 1.25;
-}
-.hero-card-title em { color: var(--ochre); font-style: italic; }
 
 .hero-card-stat {
   display: grid;
@@ -602,6 +681,57 @@ section { padding: var(--sect-y) var(--gutter); }
   width: 1px;
   height: 32px;
   background: var(--rule);
+}
+
+/* Client trust strip — below credentials */
+.hero-clients {
+  max-width: var(--max);
+  margin: 2rem auto 0;
+  padding: 1.25rem 0 0;
+  border-top: 0.5px dashed var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.hero-clients-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--teal-soft);
+  flex-shrink: 0;
+}
+.hero-clients-list {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.hero-clients-list span {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--teal);
+  letter-spacing: -0.005em;
+}
+.hero-clients-list .sep {
+  color: var(--ochre);
+  font-weight: 400;
+}
+.hero-clients-list .more {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+@media (max-width: 720px) {
+  .hero-clients { flex-direction: column; gap: 0.85rem; }
+  .hero-clients-list { gap: 0.5rem; }
+  .hero-clients-list span { font-size: 14px; }
 }
 
 /* ============================================
