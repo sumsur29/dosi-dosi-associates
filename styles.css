@@ -401,9 +401,9 @@ section { padding: var(--sect-y) var(--gutter); }
 
 .hero h1 {
   font-family: var(--serif);
-  font-size: clamp(2.4rem, 5.2vw, 4.4rem);
+  font-size: clamp(2.2rem, 4.5vw, 3.75rem);
   font-weight: 400;
-  line-height: 1.02;
+  line-height: 1.05;
   letter-spacing: -0.022em;
   color: var(--teal);
   margin-bottom: 1.75rem;
@@ -420,58 +420,12 @@ section { padding: var(--sect-y) var(--gutter); }
   font-weight: 400;
   line-height: 1.55;
   color: var(--ink-soft);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   max-width: 48ch;
 }
 .hero-lede em {
   font-style: italic;
   color: var(--teal);
-}
-.hero-lede strong {
-  font-weight: 600;
-  color: var(--teal);
-  font-style: normal;
-}
-
-/* Audience qualifier — sits below lede */
-.hero-qualifier {
-  font-family: var(--sans);
-  font-size: 13px;
-  color: var(--teal-soft);
-  margin-bottom: 1.75rem;
-  letter-spacing: 0.01em;
-  padding-left: 0.85rem;
-  border-left: 2px solid var(--ochre);
-  line-height: 1.5;
-  max-width: 52ch;
-}
-
-/* Trust line — endorsements above CTAs */
-.hero-trust {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--ink-soft);
-  margin-bottom: 1.5rem;
-  padding: 0.55rem 0.9rem;
-  background: rgba(31, 71, 71, 0.05);
-  border: 0.5px solid rgba(31, 71, 71, 0.12);
-}
-.hero-trust strong {
-  font-weight: 600;
-  color: var(--teal);
-}
-.trust-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--ochre);
-  border-radius: 50%;
-  flex-shrink: 0;
-  box-shadow: 0 0 0 4px rgba(201, 136, 44, 0.18);
 }
 
 .hero-actions {
@@ -481,46 +435,85 @@ section { padding: var(--sect-y) var(--gutter); }
   flex-wrap: wrap;
 }
 
-/* Microcopy — anti-objection text under CTAs */
+/* Microcopy under CTAs — single italic line, no box */
 .hero-microcopy {
-  margin-top: 1rem;
+  margin-top: 1.25rem;
   font-family: var(--serif);
   font-style: italic;
   font-size: 14px;
   color: var(--ink-soft);
   line-height: 1.5;
   max-width: 44ch;
-  padding-left: 0.85rem;
-  border-left: 1px solid var(--rule);
 }
 
-/* WhatsApp link */
+/* Meta row — combines audience qualifier + trust signal in one quiet line */
+.hero-meta-row {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 0.5px solid var(--rule);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-soft);
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+.meta-item-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.meta-item-pill strong {
+  color: var(--teal);
+  font-weight: 600;
+}
+.meta-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--ochre);
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px rgba(201, 136, 44, 0.15);
+}
+.meta-divider {
+  width: 1px;
+  height: 14px;
+  background: var(--rule);
+}
+@media (max-width: 720px) {
+  .meta-divider { display: none; }
+}
+
+/* WhatsApp — simple text link with small icon, no green pill */
 .hero-whatsapp {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  margin-top: 1.5rem;
-  padding: 0.75rem 1.1rem;
-  background: rgba(37, 211, 102, 0.08);
-  border: 0.5px solid rgba(37, 211, 102, 0.35);
+  gap: 0.5rem;
+  margin-top: 1rem;
   font-family: var(--sans);
   font-size: 13px;
   font-weight: 500;
   color: #128C7E;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
   letter-spacing: 0.005em;
 }
 .hero-whatsapp:hover {
-  background: rgba(37, 211, 102, 0.15);
-  border-color: #25D366;
+  color: #075E54;
   transform: translateX(3px);
 }
 .hero-whatsapp svg {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   fill: #25D366;
   flex-shrink: 0;
+}
+.hero-whatsapp span {
+  border-bottom: 0.5px solid rgba(18, 140, 126, 0.4);
+  padding-bottom: 1px;
 }
 
 /* HERO CARD — outcomes on right */
