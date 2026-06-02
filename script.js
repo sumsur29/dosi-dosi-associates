@@ -27,16 +27,7 @@
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
   }
 
-  // Pause other videos when one plays (so they don't all run together)
-  document.querySelectorAll('.testimonial-card video').forEach(video => {
-    video.addEventListener('play', () => {
-      document.querySelectorAll('.testimonial-card video').forEach(other => {
-        if (other !== video) other.pause();
-      });
-    });
-  });
-
-  // Contact form -> mailto
+  // Contact form → mailto with CC to second address
   const form = document.querySelector('form.contact-form-el');
   if (form) {
     form.addEventListener('submit', (e) => {
