@@ -26,23 +26,4 @@
   } else {
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
   }
-
-  // Contact form → mailto with CC to second address
-  const form = document.querySelector('form.contact-form-el');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-      const name = data.get('name') || '';
-      const company = data.get('company') || '';
-      const phone = data.get('phone') || '';
-      const issue = data.get('issue') || '';
-      const message = data.get('message') || '';
-      const subject = encodeURIComponent(`Discussion Request — ${name}`);
-      const body = encodeURIComponent(
-        `Name: ${name}\nCompany: ${company}\nPhone: ${phone}\nPrimary Challenge: ${issue}\n\nMessage:\n${message}`
-      );
-      window.location.href = `mailto:dosiandosiassociates@gmail.com?cc=dosianil@yahoo.co.in&subject=${subject}&body=${body}`;
-    });
-  }
 })();
