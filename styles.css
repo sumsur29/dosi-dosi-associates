@@ -1375,27 +1375,47 @@ section { padding: var(--sect-y) var(--gutter); }
   background: linear-gradient(135deg, rgba(201, 136, 44, 0.12) 0%, rgba(250, 246, 235, 0.06) 100%);
 }
 .endorsement-featured blockquote {
-  font-size: 22px;
-  line-height: 1.5;
+  font-size: 22px !important;
+  line-height: 1.5 !important;
   max-width: 78ch;
+  font-family: var(--serif) !important;
+  color: var(--cream) !important;
+  margin-bottom: 2rem !important;
+  letter-spacing: -0.005em !important;
 }
+
+/* Smaller quote mark in featured card — don't compete with badge */
+.endorsement-featured .endorsement-mark {
+  font-size: 38px !important;
+  line-height: 0.6 !important;
+  margin-bottom: 1.25rem !important;
+  margin-top: 0.5rem !important;
+}
+
+/* MENTOR BADGE — bulletproof with !important to win any cache/specificity issue */
+.endorsement-featured .endorsement-badge,
 .endorsement-badge {
-  display: inline-block;
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--ochre);
-  padding: 0.45rem 0.95rem;
-  border: 1px solid var(--ochre);
-  background: rgba(201, 136, 44, 0.08);
-  margin-bottom: 1.75rem;
+  display: inline-block !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.28em !important;
+  text-transform: uppercase !important;
+  color: var(--ochre) !important;
+  padding: 0.5rem 1rem !important;
+  border: 1px solid var(--ochre) !important;
+  background: rgba(201, 136, 44, 0.1) !important;
+  margin-bottom: 2rem !important;
+  line-height: 1 !important;
+  font-style: normal !important;
+  text-decoration: none !important;
+  vertical-align: middle;
 }
 
 @media (max-width: 820px) {
   .endorsement-featured { padding: 2rem 1.75rem; }
-  .endorsement-featured blockquote { font-size: 18px; }
+  .endorsement-featured blockquote { font-size: 18px !important; }
+  .endorsement-featured .endorsement-mark { font-size: 30px !important; }
 }
 .endorsement-mark {
   font-family: var(--serif);
