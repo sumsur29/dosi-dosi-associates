@@ -1234,6 +1234,7 @@ section { padding: var(--sect-y) var(--gutter); }
    ============================================ */
 .testimonials {
   background: var(--cream);
+  border-top: 0.5px solid var(--rule);
 }
 
 .testimonial-grid {
